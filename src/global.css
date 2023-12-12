@@ -1,0 +1,60 @@
+/* https://www.alura.com.br/artigos/guia-de-unidades-no-css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* https://www.alura.com.br/artigos/entendendo-como-funciona-box-model-e-o-box-sizing */
+}
+
+body {
+  background: var(--gray-900);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased;
+  /* Aplica uma padronização para fonte ficar mais detalhada, principalmente quando não estamos usando fontes padrões do sistema e sim fontes externas  */
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* Sempre lembrar de trabalhar de utilizar unidades de medida relativas, melhorando a acessibilidade, ou seja se alguma pessoa configura no dispositivo dela seja no computador ou celular pra aumentar o tamanho da fonte o nosso site vai se comportar de acordo com essas preferencias de acessibilidade do usuario, usar unidades de medida fixa como pixel, não vai surtir efeito as preferencias do usuario, o padrão que o nevagador seta é 
+  1rem(16px) caso não haja alteração das preferencias do usuario, é importante também usar esse padrão de unidade relativa não só para as fontes mas também para botões, espaçamentos, larguras, alturas e coisas deste tipo, no caso de border-radius por exemplo não é o ideal pois não precisamos aumentar ou diminuir o border-radius pode acabar alterando nosso layout de forma incorreta, porque assim nossa interface sempre vai aumentar ou diminuir por igual entre todos os elementos baseado ou não nas preferencias do usuario */
+  /* Por padrão os elementos aqui além do body não herdam a font do elemento pai ou do elemento raiz (:root || html) portanto definimos a font diretamente  */
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+:root {
+  --white: #fff;
+
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --green-300: #00b37e;
+  --green-500: #00875f;
+
+  --red-500: #f75a68;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+/* A div por ser por padrão display block ela sempre vai ter 100% de largura */
+
+/* https://www.w3schools.com/csSref/css_selectors.php */
+
+/* 
+16px = 1rem padrão de navegadores.
+
+Calculo de px para rem 12/16 = 0,75;
+
+Calculo de rem para px Pixel = valor em REM x 16
+*/

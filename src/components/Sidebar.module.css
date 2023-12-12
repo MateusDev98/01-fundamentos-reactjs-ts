@@ -1,0 +1,60 @@
+.sidebar {
+  background: var(--gray-800);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Um detalhe interessante é que se o overflow não estiver definido como hidden por mais que tenhamos um border-radius o conteúdo muitas vezes se tivermos uma imagem pode não respeitar o border-radius fazendo com que a imagem em sit não tenha um border-radius pois ela acaba não respeitando as propriedades do elemento em que o border-radius foi aplicado e para ajustar isso temos que colocar o overflow hidden assim fazendo com que todo contéudo que sobreponha o limite do elemento pai fique escondido => https://developer.mozilla.org/pt-BR/docs/Web/CSS/overflow  */
+}
+
+.cover {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.profile strong {
+  margin-top: 1rem;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.profile span {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.sidebar footer {
+  border-top: 1px solid var(--gray-600);
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.sidebar footer a {
+  background: transparent;
+  color: var(--green-500);
+  border: 1px solid var(--green-500);
+  border-radius: 8px;
+  height: 50px;
+  padding: 0 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
+}
+.sidebar footer a:hover {
+  background: var(--green-500);
+  color: var(--white);
+}
+
+/* Elementos que não são elementos de bloco (display: block) não podem ter larguras e alturas definidas como elementos que tem o display: inline => https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-block-4e6cba2f19d4 - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-4ccb7b77371d#.n1g0wi2pc - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-block-98480c987950#.dxyvvpjbg - https://developer.mozilla.org/pt-BR/docs/Web/HTML/Block-level_elements - https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */

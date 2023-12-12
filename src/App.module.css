@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+    /* Fazemos isso porque tudo na nossa aplicação se redimensiona automaticamente por utilizar rem (root element) como unidade de medida que é relativa ao font-size do nosso documento html ou seja se quisermos ter um valor padrão de font na nossa aplicação precisamos definir no código css que referencia o elemento <html>, por mais que podemos definir manualmente o font-size do nosso documento html por padrão a maioria dos navegadores definem o font-size padrão de 16px, neste nosso caso utilizamos da porcentagem por estar trabalhando em resoluções diferentes com unidades de medidas relativas, por isso não definimos um valor em pixel e sim porcentagem pois queremos flexilidade e a unidade de medida pixel é fixa e não relativa.
+    Com isso o usuário poderá dar zoom, poderá alterar entre dispositivos e nossa aplicação se mantera responsiva se o usuário aumenta a font no dispositivo dele, tudo irá aumentar de forma automatica e responsiva e vice e verse. */
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

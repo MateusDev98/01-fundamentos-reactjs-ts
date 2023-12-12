@@ -1,0 +1,147 @@
+.post {
+  background: var(--gray-800);
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+/* Seletor '+' fala que eu quero estilizar um elemento x que antes dele tenha um outro elemento y */
+.post + .post {
+  margin-top: 2rem;
+}
+
+/* .post:nth-child(even):not(:first-child), .post:nth-child(odd):not(:first-child) {
+    margin-top: 2rem;
+} */
+
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post > header time {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dica pessoal sempre utilize  flex-direction column quando estiver usando display em tags com display inline ou seja tags que tem o tamanho máximo igual ao do conteúdo, então usando o  flex-direction column ao invés de dar um valor 100% para cada uma por exemplo ou até mesmo um valor fixo/relativo para o elemento pai delas e depois um tamanho fixo/relativo para elas com o intuito de elas ficarem uma abaixo da outra com o flex wrap utilze o  flex-direction column que resolve esse problema.  Ou podemos até mesmo mudar o display desses elementos para um display block que dai ele vai ocupar todo o espaço independente do tamanho do conteúdo ou até mesmo se ele não existir usando isso em ambos os elementos vamos ter o efeito de quebra de linha/coluna por exemplo.*/
+
+.authorInfo strong {
+  display: block;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.authorInfo span {
+  display: block;
+  color: var(--gray-400);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.content {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-top: 1rem;
+}
+
+.hashtags {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.content a {
+  font-weight: bold;
+  color: var(--green-300);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: var(--green-500);
+}
+
+.commentForm {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-600);
+}
+
+.commentForm > strong {
+  line-height: 1.6;
+  color: var(--gray-100);
+}
+
+.commentForm textarea {
+  width: 100%;
+  background: var(--gray-900);
+  border: 0;
+  resize: none;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+.commentForm:not(.commentForm:focus-within) footer {
+  visibility: hidden;
+  max-height: 0;
+}
+
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/:focus-within
+
+  focus-within: É uma pseudo classe utilizada para quando algums dos elementos filhos recebem um foco ou seja, quando eu tenho um formulário e quero trocar a cor do mesmo quando o usuário começar a digitar eu utilizo essa propriedade, ex: 
+  form:focus-within {
+    background: blue
+  }
+  No exemplo acima, quando qualquer elemento dentro do formulário tiver um foco a cor do formulário ficará azul
+*/
+
+.commentForm:focus-within footer {
+  visibility: visible;
+}
+
+.commentForm button[type="submit"] {
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--green-500);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.commentForm button[type="submit"]:not(:disabled):hover {
+  background: var(--green-300);
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+.commentForm button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 1px solid var(--green-300) */
+
+.commentList {
+  margin-top: 2rem;
+}
